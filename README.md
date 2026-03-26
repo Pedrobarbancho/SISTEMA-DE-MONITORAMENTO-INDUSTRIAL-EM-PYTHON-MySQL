@@ -36,6 +36,30 @@ Seguindo o Pensamento Sistêmico:
 3. Armazenamento: Os dados são salvos no MySQL e um backup é gerado em JSON.
 4. Saída: O histórico é exibido no console para o usuário.
 
+## 🐍 Desenvolvimento do Sistema (Python & JSON)
+> **Nota:** O sistema encontra-se em fase de desenvolvimento. A estrutura do banco de dados (MySQL) já está totalmente funcional, e a lógica de integração em Python está sendo implementada.
+
+## 💻 Lógica de Programação (Em breve)
+O código Python será responsável por:
+
+- **Conexão:** Utilizar a biblioteca mysql-connector-python para enviar dados ao banco.
+- **Simulação:** Gerar valores aleatórios de temperatura para os sensores.
+- **Classificação:** Usar estruturas condicionais (`if`/`elif`/`else`) para definir o nível de risco (Normal, Alerta ou Crítico).
+
+## 📁 Armazenamento em JSON
+Além do banco de dados, o sistema salvará um arquivo `.json` como backup ou log de auditoria.
+Exemplo de estrutura esperada:
+```JSON
+{
+  "id_leitura": 101,
+  "sensor": "Termopar-01",
+  "valor": 85.5,
+  "unidade": "°C",
+  "status": "ALERTA",
+  "timestamp": "2024-05-20 14:30:00"
+}
+```
+
 ## 📂 Estrutura do Projeto
 
 ```Plaintext
