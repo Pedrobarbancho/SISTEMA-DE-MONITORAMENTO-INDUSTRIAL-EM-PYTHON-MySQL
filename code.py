@@ -88,7 +88,7 @@ while True:
             for linha in cursor.fetchall():
                 print(linha)
     elif opcao == "6":
-        temperatura = input(float("Digite a temperatura para análise: "))
+        temperatura = float(input("Digite a temperatura para análise: "))
         if temperatura < 70:
             print("NORMAL")
         elif temperatura >= 71 and temperatura <= 90:
