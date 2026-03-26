@@ -31,22 +31,33 @@ O sistema classifica a temperatura automaticamente:
 
 ## 🔄 Fluxo do Sistema
 Seguindo o Pensamento Sistêmico:
-1. Entrada: O sensor envia a temperatura (simulação).
-2. Processamento: O Python verifica se a temperatura está em nível de alerta.
-3. Armazenamento: Os dados são salvos no MySQL e um backup é gerado em JSON.
-4. Saída: O histórico é exibido no console para o usuário.
+1. **Entrada:** Dados digitados pelo usuário no menu Python.
+2. **Processamento:** O Python valida as opções e organiza as consultas SQL.
+3. **Armazenamento:** Os dados são enviados e salvos permanentemente no MySQL.
+4 **Saída:** Relatórios exibidos no terminal e feedbacks de sucesso/erro.
 
-## 🐍 Desenvolvimento do Sistema (Python & JSON)
-> **Nota:** O sistema encontra-se em fase de desenvolvimento. A estrutura do banco de dados (MySQL) já está totalmente funcional, e a lógica de integração em Python está sendo implementada.
+## 🐍 Funcionamento do Código (Python)
+O sistema foi desenvolvido em Python utilizando um menu interativo que se comunica diretamente com o banco de dados MySQL.
+**Principais Funções:**
 
-## 💻 Lógica de Programação (Em breve)
-O código Python será responsável por:
+**Conexão:** O script estabelece ligação com o banco de dados `bancoPGJ` via `mysql.connector.`
+**Menu Interativo:** Um laço de repetição (`while True`) mantém o sistema rodando até que o usuário escolha a opção "0".
+**Cadastros (Opções 1, 2 e 3)**: Coleta dados do usuário e utiliza comandos `INSERT` para salvar máquinas, sensores e operadores no banco.
+**Registro de Dados (Opção 4)**: Registra o valor lido pelo sensor e utiliza a função `CURDATE()` do SQL para salvar a data automaticamente.
+**Consultas (Opção 5)**: Utiliza o comando `SELECT` e o método `fetchall()` para listar todas as informações salvas nas tabelas.
+**Análise de Qualidade (Opção 6)**: Uma lógica condicional (`if`/`elif`/`else`) verifica a temperatura digitada e classifica o status da operação em tempo real.
 
-- **Conexão:** Utilizar a biblioteca mysql-connector-python para enviar dados ao banco.
-- **Simulação:** Gerar valores aleatórios de temperatura para os sensores.
-- **Classificação:** Usar estruturas condicionais (`if`/`elif`/`else`) para definir o nível de risco (Normal, Alerta ou Crítico).
+**Exemplo de Lógica de Análise:**
+```python
+if temperatura < 70:
+    print("NORMAL")
+elif temperatura >= 71 and temperatura <= 90:
+    print("ALERTA")
+else:
+    print("CRÍTICO")
+```
 
-## 📁 Armazenamento em JSON
+## 📁 Armazenamento em JSON (em breve)
 Além do banco de dados, o sistema salvará um arquivo `.json` como backup ou log de auditoria.
 Exemplo de estrutura esperada:
 ```JSON
@@ -67,15 +78,20 @@ Exemplo de estrutura esperada:
 │── /codigo          # Scripts Python
 │── /banco           # Script SQL (.sql)
 │── /dados_json      # Arquivos JSON gerados
-│── /documentacao    # Prints do sistema e do banco
 └── README.md        # Documentação
 ```
+
+## 🚀 Como Rodar o Projeto
+
+1. Certifique-se de ter o MySQL instalado e o banco criado com o script da pasta `banco`.
+2. Instale a biblioteca necessária: `pip install mysql-connector-python`.
+3. Execute o arquivo principal: `python main.py`.
 
 ## 🛠️ Tecnologias
 - Linguagem: Python
 - Banco de Dados: MySQL Workbench 8.0
 
-## 👥 Authors
+## 👥 Autores
 - [Lazy](https://github.com/Pedrobarbancho)
 - [Gilberto Alves](https://github.com/GIBINHA99)
 - [Julia Lopes](https://github.com/julialsilva27-rgb)
