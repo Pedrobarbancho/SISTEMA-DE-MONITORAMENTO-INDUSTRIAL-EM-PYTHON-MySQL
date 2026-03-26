@@ -40,12 +40,12 @@ Seguindo o Pensamento Sistêmico:
 O sistema foi desenvolvido em Python utilizando um menu interativo que se comunica diretamente com o banco de dados MySQL.
 **Principais Funções:**
 
-**Conexão:** O script estabelece ligação com o banco de dados `bancoPGJ` via `mysql.connector.`
-**Menu Interativo:** Um laço de repetição (`while True`) mantém o sistema rodando até que o usuário escolha a opção "0".
-**Cadastros (Opções 1, 2 e 3)**: Coleta dados do usuário e utiliza comandos `INSERT` para salvar máquinas, sensores e operadores no banco.
-**Registro de Dados (Opção 4)**: Registra o valor lido pelo sensor e utiliza a função `CURDATE()` do SQL para salvar a data automaticamente.
-**Consultas (Opção 5)**: Utiliza o comando `SELECT` e o método `fetchall()` para listar todas as informações salvas nas tabelas.
-**Análise de Qualidade (Opção 6)**: Uma lógica condicional (`if`/`elif`/`else`) verifica a temperatura digitada e classifica o status da operação em tempo real.
+- **Conexão:** O script estabelece ligação com o banco de dados `bancoPGJ` via `mysql.connector.`
+- **Menu Interativo:** Um laço de repetição (`while True`) mantém o sistema rodando até que o usuário escolha a opção "0".
+- **Cadastros (Opções 1, 2 e 3)**: Coleta dados do usuário e utiliza comandos `INSERT` para salvar máquinas, sensores e operadores no banco.
+- **Registro de Dados (Opção 4)**: Registra o valor lido pelo sensor e utiliza a função `CURDATE()` do SQL para salvar a data automaticamente.
+- **Consultas (Opção 5)**: Utiliza o comando `SELECT` e o método `fetchall()` para listar todas as informações salvas nas tabelas.
+- **Análise de Qualidade (Opção 6)**: Uma lógica condicional (`if`/`elif`/`else`) verifica a temperatura digitada e classifica o status da operação em tempo real.
 
 **Exemplo de Lógica de Análise:**
 ```python
